@@ -39,17 +39,13 @@ load_zsh_functions() {
 
 load_zsh_config() {
   if [[ -d $ZSH_ROOT ]]; then
-      for dir in third-party/zsh-autosuggestions third-party/zsh-autocomplete core tools; do
+      for dir in core tools; do
       load_zsh_dir "$ZSH_ROOT/$dir"
     done
     load_zsh_functions "$ZSH_ROOT"
   else
     printf 'ZSH_ROOT not found at %s\n' "$ZSH_ROOT" >&2
   fi
-
-# for zsh autocomplete
-bindkey              '^I'         menu-complete
-bindkey "$terminfo[kcbt]" reverse-menu-complete
 
   # private configs
   [[ -f $HOME/.zshrc.private ]] && source "$HOME/.zshrc.private"
