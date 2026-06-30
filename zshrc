@@ -48,8 +48,8 @@ load_zsh_config() {
   fi
 
 # for zsh autocomplete
-# bindkey              '^I'         menu-complete
-# bindkey "$terminfo[kcbt]" reverse-menu-complete
+bindkey              '^I'         menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
 
   # private configs
   [[ -f $HOME/.zshrc.private ]] && source "$HOME/.zshrc.private"
