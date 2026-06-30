@@ -77,8 +77,9 @@ RPROMPT='${__ps_err} '
 # automation).
 # Conditions: stdin is a tty, not already in tmux, shell is
 # interactive.
-# if (( ! ${+INSIDE_EMACS} && ! ${+INSIDE_HS} )); then
-#   if [[ -t 0 && -z "$TMUX" && $- == *i* ]]; then
-#     exec tmux
-#   fi
-# fi
+if (( ! ${+INSIDE_EMACS} && ! ${+INSIDE_HS} )); then
+  if [[ -t 0 && -z "$TMUX" && $- == *i* ]]; then
+    exec tmux
+  fi
+fi
+
