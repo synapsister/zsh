@@ -1,3 +1,4 @@
 *.zwc
 install.sh
 *.~
+/.zshrc
