@@ -53,6 +53,9 @@ load_zsh_config() {
 
 load_zsh_config
 
+[ -n "$EAT_SHELL_INTEGRATION_DIR" ] && \
+  source "$EAT_SHELL_INTEGRATION_DIR/zsh"
+
 if (( ${+DEBUG_ZSH_PERF} )); then
   zprof
 fi
