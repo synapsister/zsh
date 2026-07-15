@@ -30,14 +30,14 @@ __syntax_hl() {
   local -i cmd_end=$(( offset + $#cmd ))
 
   # rm: dim bold on the whole line
-  if [[ $cmd == rm ]]; then
-    region_highlight+=("0 $#BUFFER fg=90,bold")
-    return
-  fi
+  # if [[ $cmd == rm ]]; then
+  #   region_highlight+=("0 $#BUFFER fg=,bold")
+  #   return
+  # fi
 
   # sudo: purple bold
   if [[ $cmd == sudo ]]; then
-    region_highlight+=("$offset $cmd_end fg=225,bold")
+    region_highlight+=("$offset $cmd_end fg=#5f9a88,bold")
     return
   fi
 

@@ -24,7 +24,7 @@ __prompt_precmd() {
   __ps_err='' __ps_tag='' __ps_venv='' __ps_git=''
 
   # exit status
-  (( last_status )) && __ps_err="%F{97}${last_status} "
+  (( last_status )) && __ps_err="%F{197}${last_status} "
   
   # session tag
   [[ -n $_PROMPT_TAG ]] && \
@@ -69,8 +69,8 @@ __prompt_precmd() {
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd __prompt_precmd
 
-PROMPT=' ${__ps_git}${__ps_tag}${__ps_venv}%f%f%F{225}%n%f@%F{169}%m%f
- %F{225}%~%f> '
+PROMPT=' ${__ps_git}${__ps_tag}${__ps_venv}%f%f%F{#db7093}%n%f%F{#808080}@%f%F{#9A5F71}%m%f
+ %F{#808080}%~%f> '
 RPROMPT='${__ps_err} '
 # Auto-start tmux for interactive terminal sessions, unless inside
 # Emacs (which has its own window management) or Hammerspoon (macOS
